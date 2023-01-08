@@ -1,0 +1,13 @@
+function isPangram(string){
+    let strArr = string.toLowerCase()
+    let alphabet = 'abcdefghijklmnopqrstuvwxyz'.split('')
+    
+    for(let i = 0; i < alphabet.length; i++){
+      if(strArr.indexOf(alphabet[i]) < 0){
+        return 'not pangram'
+      }
+    }
+    return 'pangram'
+  }
+  
+  console.log(isPangram('We promptly judged antique ivory buckles for the prize'))
