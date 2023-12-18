@@ -1,15 +1,12 @@
 function pickingNumbers(a){
-  let max_length = 0
-  let newValues = a.sort()
-
-  for(let i = 0; i < newValues.length; i++){
-    let count = 1
-    for(let j = i + 1; j < newValues.length; j++){
-      if(Math.abs(newValues[i] - newValues[j]) <= 1){
-        count += 1
-      }
-    }
-    max_length = Math.max(max_length,count)
+  const countMap = new Map();
+  for (const num of a) {
+    countMap.set(num, (countMap.get(num) || 0) + 1);
   }
-  return max_length
+  let maxLength = 0
+  for(const [num,count] of countMap){
+    maxLength = Math.max(maxLength,count + (countMap.get(num + 1) || 0))
+  }
+  
+  return maxLength
 }
