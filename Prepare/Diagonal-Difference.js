@@ -1,5 +1,5 @@
 function fiagonalDifference(arr){
-  let n = are.length
+  let n = arr.length
   let diag1 = 0
   let diag2 = 0
 
